@@ -1,0 +1,24 @@
+name:                huffman
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/Lockne/huffman
+license:             BSD3
+author:              Lockne
+maintainer:          https://github.com/Lockne
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     PreTree, PQueue, Weighted
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
+
+executable huffman-encoding
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  build-depends:       base >= 4.7 && < 5
