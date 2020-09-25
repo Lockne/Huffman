@@ -1,6 +1,6 @@
 {-# LANGUAGE DeriveFunctor #-}
 
-module Weighted where
+module Weighted (Weighted (..)) where
 
 data Weighted a =
   WPair
