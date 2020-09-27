@@ -5,7 +5,7 @@ import Data.Functor.Identity
 import qualified Data.Map.Strict as M
 import PQueue
 import PrefixTree
-import Types
+import Types (PQueue(..), PrefixTree(..), Weighted(..), WeightedPT(..))
 
 -- | FreqTable : This takes a string, generates a table with
 --               key values as the elements of the string,
