@@ -13,9 +13,9 @@ extra-source-files:  README.md
 
 library
   hs-source-dirs:      src
-  exposed-modules:     PrefixTree, PQueue, Weighted, Huffman
+  exposed-modules:     PrefixTree, PQueue, Weighted, Huffman, Encode, Types
   default-language:    Haskell2010
-  build-depends:       base >= 4.7 && < 5, containers, transformers
+  build-depends:       base >= 4.7 && < 5, containers, transformers, binary, cereal
 
 executable huffman-encoding
   hs-source-dirs:      src

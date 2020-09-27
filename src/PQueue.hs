@@ -1,21 +1,16 @@
 {-# LANGUAGE DeriveFoldable #-}
 
 module PQueue
-  ( PQueue
-  , emptyPQ
+  ( emptyPQ
   , insertPQ
   , popPQ
   , sizePQ
   ) where
 
 import Data.Foldable
+import Types (PQueue(..), SkewHeap(..))
 
--- | (Internal implementation) SkewHeap
-data SkewHeap a
-  = SEmpty
-  | SNode (SkewHeap a) a (SkewHeap a)
-  deriving (Show, Eq, Foldable)
-
+-- | Internal implementations for type SkewHeap
 makeSH :: a -> SkewHeap a
 makeSH x = SNode SEmpty x SEmpty
 
@@ -30,13 +25,8 @@ mergeSH hA@(SNode lA xA rA) hB@(SNode lB xB rB)
   | xA < xB = SNode (mergeSH rA hB) xA lA
   | otherwise = SNode (mergeSH rB hA) xB lB
 
--- | PQueue is a newtype wrapper for SkewHeap.
---   We will export only the functions below
+-- | We will export only the functions below
 --   and only to these will the user have access.
-newtype PQueue a =
-  PQ (SkewHeap a)
-  deriving (Show, Foldable)
-
 emptyPQ :: PQueue a
 emptyPQ = PQ SEmpty
 
